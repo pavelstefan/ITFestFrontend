@@ -1,22 +1,23 @@
 var server = "http://10.10.3.102/";
 var userEmail;
 
+
 function getUserCredentials(isForLogin) {
-    if(!isForLogin){
+    if (!isForLogin) {
         var emailForm = document.getElementById("signUpEmailTextField"),
             passwordForm = document.getElementById("signUpPasswordTextField");
-            var nameForm = document.getElementById("signUpNameTextField");
-        return { 
-            email : emailForm.value,
-            password : passwordForm.value,
-            name : nameForm.value 
+        var nameForm = document.getElementById("signUpNameTextField");
+        return {
+            email: emailForm.value,
+            password: passwordForm.value,
+            name: nameForm.value
         };
     } else {
         var emailForm = document.getElementById("loginEmailTextField"),
             passwordForm = document.getElementById("loginPasswordTextField");
-        return { 
-            email : emailForm.value,
-            password : passwordForm.value
+        return {
+            email: emailForm.value,
+            password: passwordForm.value
         };
     }
 }
@@ -24,53 +25,56 @@ function getUserCredentials(isForLogin) {
 function sendRequest(requestType, endpoint, data, successCallback, errorCallback) {
     var link = "?";
 
-    for(var key in data){
+    for (var key in data) {
         var value = data[key];
-        if(link.length > 1){
+        if (link.length > 1) {
             link += "&" + key + "=" + value;
         } else {
             link += key + "=" + value;
         }
     }
 
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        var response = JSON.parse(this.responseText);
-        if (this.readyState == 4 && this.status == 200) {
-                successCallback(response);
-            } else {
-                errorCallback(response);
-            }
-        };
-    request.open(requestType, server + endpoint + link, true);
-    request.send();
+
+    $.ajax({
+        type: requestType,
+        url: server + endpoint + link,
+        dataType: 'json',
+        success: successCallback,
+        error : errorCallback
+    });
 }
 
+function onPageLoad() {
+    var headerMessage = document.getElementById("headerMessage"),
+        signUpForm = document.getElementById("SignUpForm"),
+        loginForm = document.getElementById("LoginForm"),
+        coursesMainPage = document.getElementById("coursesMainPage");
 
-
-var onPageLoad = function () {
-    var signUpForm = document.getElementById("SignUpForm"),
-        loginForm = document.getElementById("LoginForm");
-
+    loginForm.style.display = "block";
     signUpForm.style.display = "none";
-
-    var loginButton = document.getElementById("loginButton"),
-        changeToSignUpButton = document.getElementById("changeToSignUpButton");
+    coursesMainPage.style.display = "none";
 
 
+    var loginButton = document.getElementById("loginButton");
     loginButton.onclick = function () {
         sendRequest("POST", "login", getUserCredentials(true),
-            function(responseFromServer) {
-
-        }, function (responseFromServer) {
-            var errorMessage = document.getElementById("loginErrorMessage");
-            errorMessage.innerHTML = responseFromServer.message;
-        });
+            function () {
+                loginForm.style.display = "none";
+                signUpForm.style.display = "none";
+                coursesMainPage.style.display = "block";
+                console.log('SUCCESS');
+            }, function () {
+                var errorMessage = document.getElementById("loginErrorMessage");
+                errorMessage.style.display = "block";
+                console.log("EROARE");
+            });
     };
 
+    var changeToSignUpButton = document.getElementById("changeToSignUpButton");
     changeToSignUpButton.onclick = function () {
         loginForm.style.display = "none";
         signUpForm.style.display = "block";
+        headerMessage.innerHTML = "Pagina de Sign Up";
     };
 
     var signUpButton = document.getElementById("signUpButton");
@@ -79,5 +83,7 @@ var onPageLoad = function () {
     };
 
 
-};
-                    
+}
+
+onPageLoad();
+
