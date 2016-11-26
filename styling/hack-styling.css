@@ -65,12 +65,9 @@ html, body {
 
 .Sign-up:hover, .Login:hover {
 	background-color: #d8dfe5;
-	box-shadow: box-shadow: 0 0 20px black;
+	box-shadow: 0 0 20px black;
 }
 
-.input-layer-sign-up {
-	display: ;
-}
 
 .form {
 	border: 3px solid #f1f1f1;
@@ -139,7 +136,7 @@ input [type=text], input [type=password] {
 }
 
 .NavBar-cont {
-	width: 98vwvw;
+	width: 98vw;
 	margin-right: 2vw;
 	margin-left: 2vw;
 	padding: 0;
