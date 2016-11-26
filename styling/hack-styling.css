@@ -114,6 +114,7 @@ input [type=text], input [type=password] {
 }
 
 .classDetails-content {
-	width: ;
+	width: 80vw;
+	height: auto;
 }
 
