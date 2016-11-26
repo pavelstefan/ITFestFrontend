@@ -27,7 +27,7 @@ html, body {
 }
 .header {
 	width: 98%;
-	height: 80%;
+	height: 65%;
 	padding-top: 6%;
 	background-color: #d8dfe5;
 	font-size: 5vw;
@@ -102,18 +102,18 @@ input [type=text], input [type=password] {
 }
 
 .courses {
-	margin-top: 3vw;
+	margin-top: 1vw;
 	width: 100vw;
-	height: 50vw;
+	height: 40vw;
 	position: absolute;
-	top: 20vw;
+	top: 16vw;
 	display: block;
-	overflow: scroll;
+	overflow: auto;
 	margin-bottom: 1vw
 }
 
 .classI {
-	background-color: gray;
+	background-color: #d8dfe5;
 	border-radius: 5px;
 	margin-left: 2vw;
 	margin-right: 2vw;
@@ -121,6 +121,8 @@ input [type=text], input [type=password] {
 	max-height: 16vw;
 	padding-bottom: 3px;
 	display: block;
+
+	border-bottom: 2px solid #c2c8ce;
 }
 
 .classDetails-content {
@@ -129,11 +131,11 @@ input [type=text], input [type=password] {
 }
 
 #CoursesPage {
-	display: block;
+	display: none;
 }
 
 #LoginPage {
-	display: none;
+	display: block;
 }
 
 .NavBar-cont {
@@ -148,7 +150,8 @@ input [type=text], input [type=password] {
 .NavBar {
 	height: 3vw;
 	width: 98%;
-	background-color: blue;
+	background-color: #e3e8ec;
+	border: 1px solid #dbe2e7;
 	position: relative;
 	display: block;
 	}
@@ -207,22 +210,19 @@ input [type=text], input [type=password] {
 }
 
 #courseNameTextField {
-	position: relative;
-	width: 70vw;
+	width: 75vw;
 	text-align: center;
 }
 
 #hostNameTextField {
-	position: relative;
-	width: 70vw;
+	width: 75vw;
 	text-align: center;
 }
 
 #courseDescriptionTextField {
 	position: relative;
-	width: 70vw;
+	width: 75vw;
 	min-height: 20vw;
-	text-align: center;
 }
 
 .createEvent-content {
@@ -243,21 +243,20 @@ input [type=text], input [type=password] {
 
 #eventNameTextField {
 	position: relative;
-	width: 70vw;
+	width: 75vw;
 	text-align: center;
 }
 
 #eventHostNameTextField {
 	position: relative;
-	width: 70vw;
+	width: 75vw;
 	text-align: center;
 }
 
 #eventDescriptionTextField {
 	position: relative;
-	width: 70vw;
+	width: 75vw;
 	min-height: 20vw;
-	text-align: center;
 }
 
 #createEventBtn2 {
