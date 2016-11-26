@@ -97,7 +97,7 @@ input [type=text], input [type=password] {
 }
 
 #LoginForm {
-	display: none;
+	display: block;
 }
 
 #SubmitForm {
@@ -111,12 +111,12 @@ input [type=text], input [type=password] {
 	position: absolute;
 	top: 20vw;
 	background-color: blue;
-	display: block;
+	display: none;
 }
 
 .classDetails-content {
 	width: 10vw;
-	height: 20px;
+	height: 15vw;
 	position: absolute;
 	float: left;
 	margin-left: 1%;
@@ -126,11 +126,11 @@ input [type=text], input [type=password] {
 }
 
 #CoursesPage {
-	display: block;
+	display: none;
 }
 
 #LoginPage {
-	display: none;
+	display: block;
 }
 
 
