@@ -103,3 +103,17 @@ input [type=text], input [type=password] {
 #SubmitForm {
 	display: none;	
 }
+
+.courses {
+	top: 0;
+	width: 100vw;
+	height: 50vw;
+	position: absolute;
+	background-color: blue;
+	display: none;
+}
+
+.classDetails-content {
+	width: ;
+}
+
