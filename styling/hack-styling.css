@@ -120,7 +120,7 @@ input [type=text], input [type=password] {
 	width: 98vw;
 	max-height: 16vw;
 	padding-bottom: 3px;
-	display: none;
+	display: block;
 }
 
 .classDetails-content {
@@ -170,6 +170,7 @@ input [type=text], input [type=password] {
 #subToCourse {
 	margin-right: 3vw;
 	float: right;
+
 }
 
 #createEventBtn {
@@ -194,7 +195,7 @@ input [type=text], input [type=password] {
 	width: 100vw;
 	height: auto;
 	background-color: #a1b4bb;
-	display: none;
+	display: block;
 }
 
 #createCourseForm {
@@ -222,4 +223,47 @@ input [type=text], input [type=password] {
 	width: 70vw;
 	min-height: 20vw;
 	text-align: center;
+}
+
+.createEvent-content {
+	padding: 16px;
+	width: 100vw;
+	height: auto;
+	background-color: #a1b4bb;
+	display: none;
+}
+
+#createEventForm {
+	width: 80%;
+	height: 40vw;
+	margin-top: 3vw;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+#eventNameTextField {
+	position: relative;
+	width: 70vw;
+	text-align: center;
+}
+
+#eventHostNameTextField {
+	position: relative;
+	width: 70vw;
+	text-align: center;
+}
+
+#eventDescriptionTextField {
+	position: relative;
+	width: 70vw;
+	min-height: 20vw;
+	text-align: center;
+}
+
+#createEventBtn2 {
+	position: relative;
+	height: 5vw;
+	width: 80vw;
+	margin-top: 3vw;
+	margin-right: 1vw;
 }
