@@ -107,7 +107,7 @@ input [type=text], input [type=password] {
 	height: 50vw;
 	position: absolute;
 	top: 20vw;
-	display: none;
+	display: block;
 	overflow: scroll;
 	margin-bottom: 1vw
 }
@@ -120,6 +120,7 @@ input [type=text], input [type=password] {
 	width: 98vw;
 	max-height: 16vw;
 	padding-bottom: 3px;
+	display: none;
 }
 
 .classDetails-content {
@@ -146,10 +147,10 @@ input [type=text], input [type=password] {
 
 .NavBar {
 	height: 3vw;
-	width: 100%;
+	width: 98%;
 	background-color: blue;
 	position: relative;
-	display: none;
+	display: block;
 	}
 
 #createCourseBtn {
@@ -160,8 +161,10 @@ input [type=text], input [type=password] {
 
 #createCourseBtn2 {
 	position: relative;
-	height: 10vw;
-	width: 35vw;
+	height: 5vw;
+	width: 80vw;
+	margin-top: 3vw;
+	margin-right: 1vw;
 }
 
 #subToCourse {
@@ -186,16 +189,37 @@ input [type=text], input [type=password] {
 	height: 100%;
 }
 
-.createCourseClass-content {
-	top: 10vw;
+.createCourse-content {
+	padding: 16px;
 	width: 100vw;
 	height: auto;
-	background-color: gray;
-	position: relative;
-	display: block;
+	background-color: #a1b4bb;
+	display: none;
 }
 
 #createCourseForm {
-	width: 70%;
-	height: 50vw;
+	width: 80%;
+	height: 40vw;
+	margin-top: 3vw;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+#courseNameTextField {
+	position: relative;
+	width: 70vw;
+	text-align: center;
+}
+
+#hostNameTextField {
+	position: relative;
+	width: 70vw;
+	text-align: center;
+}
+
+#courseDescriptionTextField {
+	position: relative;
+	width: 70vw;
+	min-height: 20vw;
+	text-align: center;
 }
