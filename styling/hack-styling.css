@@ -35,12 +35,13 @@ html, body {
 	height: 100%;
 }
 
-.input-container {
+.input-container, .input-layer {
 	padding-top: 6vw;
 	padding-bottom: 6vw;
 	margin: auto;
 	background-color: #bbc6ce;
 	width: 50%;
+	display: block;
 }
 
 .Sign-up, .Login {
@@ -57,4 +58,8 @@ html, body {
 .Sign-up:hover, .Login:hover {
 	background-color: #d8dfe5;
 	box-shadow: box-shadow: 0 0 20px black;
+}
+
+.input-layer {
+	display: none;
 }
