@@ -57,7 +57,7 @@ function showCourses(){
             var newCourseDiv = document.createElement("div");
             newCourseDiv.setAttribute("class","classI");
             newCourseDiv.innerHTML =
-                '<h2>Course Example1</h2>' +
+                '<h2>' + courseData.name + '</h2>' +
 
                 '<span class="classDetails-content"><button id="subToCourse">Subscribe</button></span>' +
 
@@ -84,11 +84,13 @@ function onPageLoad() {
         createCourseForm = document.getElementById("createCourseForm"),
         createEventForm = document.getElementById("createEventForm");
 
-    loginForm.style.display = "block";
-    signUpForm.style.display = "none";
-    coursesMainPage.style.display = "none";
-    createCourseForm.style.display = "none";
-    createEventForm.style.display = "none";
+
+        loginForm.style.display = "block";
+        signUpForm.style.display = "none";
+        coursesMainPage.style.display = "none";
+        createCourseForm.style.display = "none";
+        createEventForm.style.display = "none";
+
 
     var loginButton = document.getElementById("loginButton");
     loginButton.onclick = function () {
@@ -105,6 +107,7 @@ function onPageLoad() {
                 errorMessage.style.display = "block";
                 console.log("EROARE");
             });
+        userEmail = getUserCredentials(true).email;
     };
 
     var changeToSignUpButton = document.getElementById("changeToSignUpButton");
@@ -116,7 +119,19 @@ function onPageLoad() {
 
     var signUpButton = document.getElementById("signUpButton");
     signUpButton.onclick = function () {
-        sendRequest("POST", "sign_up", getUserCredentials(false), printServerResponseMessage, printServerResponseMessage);
+        sendRequest("POST", "signup", getUserCredentials(false),
+            function () {
+                loginForm.style.display = "none";
+                signUpForm.style.display = "none";
+                coursesMainPage.style.display = "block";
+                console.log('SUCCESS');
+                showCourses();
+
+            }, function () {
+                var errorMessage = document.getElementById("loginErrorMessage");
+                errorMessage.style.display = "block";
+                console.log("EROARE");
+            });
     };
 
     var createCourseButton = document.getElementById("createCourseBtn");
@@ -127,6 +142,20 @@ function onPageLoad() {
             courses[i].style.display = "none";
         }
     };
+
+    var createCourseButton2 = document.getElementById("createCourseBtn2");
+    createCourseButton2.onclick = function () {
+        var newCourseName = document.getElementById("courseNameTextField");
+        var newSchool = document.getElementById("schoolNameTextField");
+
+        sendRequest("POST", "createcourse", {name : newCourseName.value, email : userEmail, school : newSchool.value},
+            function () {
+                createCourseForm.style.display = "none";
+                showCourses();
+            }, function () {
+                console.log("las-o asa");
+            });
+    }
 
 }
 

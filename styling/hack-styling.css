@@ -186,11 +186,12 @@ input [type=text], input [type=password] {
 	height: 100%;
 }
 
-#coursesPage, #eventsPage {
+#coursesPageButton, #eventsPage, #genericSearchButton {
 	float: left;
 	position: relative;
 	height: 100%;
 }
+
 
 .createCourse-content {
 	padding: 16px;
@@ -264,4 +265,19 @@ input [type=text], input [type=password] {
 	width: 80vw;
 	margin-top: 3vw;
 	margin-right: 1vw;
+}
+
+.input[type=text] {
+	width: 130px;
+	height: 100%;
+	-webkit-transition: width 1s ease-in-out;
+	transition: width 1s ease-in-out;
+}
+
+#searchBar{
+	height: 100%;
+}
+
+#searchBar:focus {
+	width: 60%;
 }
