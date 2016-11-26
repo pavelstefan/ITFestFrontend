@@ -6,18 +6,54 @@
 
 <body>
 	<div class="header-container">
-		Pagina de Login / Submit
-	<div class="header-background">
+		<div class="header">
+			Pagina de Login / Submit
+		</div>
+		<div class="header-background">
 	</div>
 </div>
 
 <div class="body-container">
-	<div class="input-container">
-		<button class="Sign-up">Sign-up</button>
-		<button class="Login" style="margin-bottom: 5%">Login with existing account</button>
+	
+
+	<div id="LoginForm" class="input-container">
+		
+		<p id="errorMessage" class="errorMsg"><u>*Not the correct input</u></p>
+
+		<div class="Email-container">
+		<label><b>Email:</b></label>
+		<input id="emailTextField" type="email" placeholder="Enter Username" name="uname" required>
+		</div>
+
+
+		<div class="psw-container">
+		<label><b>Password:</b></label>
+		<input id="passwordTextField" type="password" placeholder="Enter Password" name="psw" required>
+		</div>
+		
+		<button id="loginButton" class="Login" style="margin-bottom: 5%">Login</button>
+
+		<button id="signUpButton" class="Sign-up">Sign-up</button>
 	</div>
 
-	<div class="input-layer">
+
+
+	<div id="SubmitForm" class="input-container">
+		<p id="errorMessage" class="errorMsg"><u>*Not the correct input</u></p>
+
+		<label><b>Name:</b></label>
+		<input id="emailTextField" type="email" placeholder="Enter Username" name="uname" required>
+
+		<label><b>Email:</b></label>
+		<input id="emailTextField" type="email" placeholder="Enter Username" name="uname" required>
+
+		<label><b>Password:</b></label>
+		<input id="passwordTextField" type="password" placeholder="Enter Password" name="psw" required>
+
+		<button id="signUpButton" class="Sign-up">Sign-up</button>
+	</div>
+
+	<div class="input-layer-login">
 	</div>
 
 </div>
