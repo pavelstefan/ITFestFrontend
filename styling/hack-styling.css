@@ -97,7 +97,7 @@ input [type=text], input [type=password] {
 }
 
 #LoginForm {
-	display: block;
+	display: none;
 }
 
 #SubmitForm {
@@ -105,33 +105,100 @@ input [type=text], input [type=password] {
 }
 
 .courses {
-	top: 0;
+	margin-top: 3vw;
 	width: 100vw;
 	height: 50vw;
 	position: absolute;
 	top: 20vw;
-	background-color: blue;
 	display: none;
+	overflow: scroll;
+	margin-bottom: 1vw
+}
+
+.classI {
+	background-color: gray;
+	border-radius: 5px;
+	margin-left: 2vw;
+	margin-right: 2vw;
+	width: 98vw;
+	max-height: 16vw;
+	padding-bottom: 3px;
 }
 
 .classDetails-content {
-	width: 10vw;
-	height: 15vw;
-	position: absolute;
-	float: left;
-	margin-left: 1%;
-	margin-right: 1%;
-	background-color: white;
-	border: 1px solid #ccc;
+	width: 20vw;
+	margin-left: 2vw;
 }
 
 #CoursesPage {
-	display: none;
-}
-
-#LoginPage {
 	display: block;
 }
 
+#LoginPage {
+	display: none;
+}
 
+.NavBar-cont {
+	width: 98vwvw;
+	margin-right: 2vw;
+	margin-left: 2vw;
+	padding: 0;
+	position: relative;
+	top: 5px;
+}
 
+.NavBar {
+	height: 3vw;
+	width: 100%;
+	background-color: blue;
+	position: relative;
+	display: none;
+	}
+
+#createCourseBtn {
+	float: right;
+	position: relative;
+	height: 100%;
+}
+
+#createCourseBtn2 {
+	position: relative;
+	height: 10vw;
+	width: 35vw;
+}
+
+#subToCourse {
+	margin-right: 3vw;
+	float: right;
+}
+
+#createEventBtn {
+	margin-right: 3vw;
+	float: right;
+}
+
+#myCoursesBtn {
+	float: left;
+	position: relative;
+	height: 100%;
+}
+
+#coursesPage, #eventsPage {
+	float: left;
+	position: relative;
+	height: 100%;
+}
+
+.createCourseClass-content {
+	top: 10vw;
+	width: 100vw;
+	height: auto;
+	background-color: gray;
+	position: relative;
+	display: block;
+}
+
+#createCourseForm {
+	width: 70%;
+	height: 50vw;
+}
