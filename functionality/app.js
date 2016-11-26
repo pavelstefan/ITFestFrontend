@@ -63,11 +63,11 @@ function showCourses(){
 
                 '<span class="classDetails-content"><button id="createEventBtn">Create Event</button></span>' +
 
-                '<span class="classDetails-content"><u>Name:</u></span>&nbsp' + courseData.name +
+                '<span class="classDetails-content"><u>School Name:</u></span>&nbsp' + courseData.school +
 
                 '<span class="classDetails-content"><u>Host:</u></span>&nbsp'+ courseData.moderator +
 
-                '<span class="classDetails-content"><u>About</u></span>&nbspUn curs fain';
+                '<span class="classDetails-content"><u>About:</u></span>&nbspUn curs fain';
 
             coursesPage.appendChild(newCourseDiv);
         }
