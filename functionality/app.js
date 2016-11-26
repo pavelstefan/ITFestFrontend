@@ -48,12 +48,13 @@ function onPageLoad() {
     var headerMessage = document.getElementById("headerMessage"),
         signUpForm = document.getElementById("SignUpForm"),
         loginForm = document.getElementById("LoginForm"),
-        coursesMainPage = document.getElementById("coursesMainPage");
+        coursesMainPage = document.getElementById("CoursesPage"),
+        createCourseForm = document.getElementById("createCourseForm");
 
     loginForm.style.display = "block";
     signUpForm.style.display = "none";
     coursesMainPage.style.display = "none";
-
+    createCourseForm.style.display = "none";
 
     var loginButton = document.getElementById("loginButton");
     loginButton.onclick = function () {
@@ -82,7 +83,11 @@ function onPageLoad() {
         sendRequest("POST", "sign_up", getUserCredentials(false), printServerResponseMessage, printServerResponseMessage);
     };
 
-
+    var createCourseButton = document.getElementById("createCourseBtn");
+    createCourseButton.onclick = function () {
+        createCourseForm.style.display = "block";
+        // coursesMainPage.style.display = "none";
+    }
 }
 
 onPageLoad();
