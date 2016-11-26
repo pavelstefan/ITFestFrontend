@@ -4,7 +4,7 @@
 	<script type="text/javascript" src="functionality/app.js"></script>
 </head>
 
-<body>
+<body onload="onPageLoad()">
 	<div class="header-container">
 		<div id="LoginPage" class="header">
 			Pagina de Login / Submit
@@ -22,37 +22,37 @@
 
 	<div id="LoginForm" class="input-container">
 		
-		<p id="errorMessage" class="errorMsg"><u>*Not the correct input</u></p>
+		<p id="loginErrorMessage" class="errorMsg"><u>*Not the correct input</u></p>
 
 		<div class="Email-container">
-		<label><b>Email:</b></label>
-		<input id="loginEmailTextField" type="email" placeholder="Enter Username" name="uname" required>
+			<label><b>Email:</b></label>
+			<input id="loginEmailTextField" type="email" placeholder="Enter Username" name="uname" required>
 		</div>
 
 
 		<div class="psw-container">
-		<label><b>Password:</b></label>
-		<input id="loginPasswordTextField" type="password" placeholder="Enter Password" name="psw" required>
+			<label><b>Password:</b></label>
+			<input id="loginPasswordTextField" type="password" placeholder="Enter Password" name="psw" required>
 		</div>
 		
 		<button id="loginButton" class="Login" style="margin-bottom: 5%">Login</button>
 
-		<button id="signUpButton" class="Sign-up">Sign-up</button>
+		<button id="changeToSignUpButton" class="Sign-up">Sign-up</button>
 	</div>
 
 
 
-	<div id="SubmitForm" class="input-container">
-		<p id="errorMessage" class="errorMsg"><u>*Not the correct input</u></p>
+	<div id="SignUpForm" class="input-container">
+		<p id="signUpErrorMessage" class="errorMsg"><u>*Not the correct input</u></p>
 
 		<label><b>Name:</b></label>
-		<input id="signupNameTextField" type="text" placeholder="Enter Username" name="uname" required>
+		<input id="signUpNameTextField" type="text" placeholder="Enter Username" name="username" required>
 
 		<label><b>Email:</b></label>
-		<input id="signupEmailTextField" type="email" placeholder="Enter Email" name="uname" required>
+		<input id="signUpEmailTextField" type="email" placeholder="Enter Email" name="email" required>
 
 		<label><b>Password:</b></label>
-		<input id="signupPasswordTextField" type="password" placeholder="Enter Password" name="psw" required>
+		<input id="signUpPasswordTextField" type="password" placeholder="Enter Password" name="password" required>
 
 		<button id="signUpButton" class="Sign-up">Sign-up</button>
 	</div>
