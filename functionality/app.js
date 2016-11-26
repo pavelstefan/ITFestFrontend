@@ -21,46 +21,63 @@ function getUserCredentials(isForLogin) {
     }
 }
 
+function sendRequest(requestType, endpoint, data, successCallback, errorCallback) {
+    var link = "?";
 
-
-function sendRequest(requestType, endpoint, data, doIUseCallback, successCallback, failureCallback) {
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (doIUseCallback == true) {
-            var responseText = this.responseText;
-            if (this.readyState == 4 && this.status == 200) {
-                successCallback(responseText);
-            } else {
-                failureCallback(responseText);
-            }
+    for(var key in data){
+        var value = data[key];
+        if(link.length > 1){
+            link += "&" + key + "=" + value;
+        } else {
+            link += key + "=" + value;
         }
     }
-    request.open(requestType, endpoint, true);
-    request.send(data);
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        var response = JSON.parse(this.responseText);
+        if (this.readyState == 4 && this.status == 200) {
+                successCallback(response);
+            } else {
+                errorCallback(response);
+            }
+        };
+    request.open(requestType, server + endpoint + link, true);
+    request.send();
 }
 
-function printServerResponseMessage(responseFromServer){
-    var response = JSON.parse(responseFromServer);
-    console.log(response.message);
-}    
+
 
 var onPageLoad = function () {
+    var signUpForm = document.getElementById("SignUpForm"),
+        loginForm = document.getElementById("LoginForm");
+
+    signUpForm.style.display = "none";
+
     var loginButton = document.getElementById("loginButton"),
-        signUpButton = document.getElementById("changeToSignUpButton");
+        changeToSignUpButton = document.getElementById("changeToSignUpButton");
 
 
     loginButton.onclick = function () {
-        sendRequest("GET", server + "login", getUserCredentials(true),
-                    true, printServerResponseMessage, printServerResponseMessage);
+        sendRequest("POST", "login", getUserCredentials(true),
+            function(responseFromServer) {
+
+        }, function (responseFromServer) {
+            var errorMessage = document.getElementById("loginErrorMessage");
+            errorMessage.innerHTML = responseFromServer.message;
+        });
     };
-    signUpButton.onclick = function () {
-        var submitForm = document.getElementById("SubmitForm"),
-            loginForm = document.getElementById("LoginForm");
+
+    changeToSignUpButton.onclick = function () {
         loginForm.style.display = "none";
-        submitForm.style.display = "block";
-        
-//        sendRequest("POST", server += "/sign_up", getUserCredentials(false), 
-//                    true, printServerResponseMessage, printServerResponseMessage);
+        signUpForm.style.display = "block";
     };
+
+    var signUpButton = document.getElementById("signUpButton");
+    signUpButton.onclick = function () {
+        sendRequest("POST", "sign_up", getUserCredentials(false), printServerResponseMessage, printServerResponseMessage);
+    };
+
+
 };
                     
